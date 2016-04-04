@@ -62,7 +62,7 @@ if __name__ == '__main__':
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     stream = Stream(auth, l)
-    stream.filter(track = ["kenya","madoadoa"], locations = [33.91,-4.68,41.91,5.03])
+    stream.filter(locations = [33.91,-4.68,41.91,5.03])
     
 
 
