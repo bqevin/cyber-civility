@@ -1,3 +1,8 @@
+"""
+Author: Kevin Barasa
+Phone : +254724778017
+Email : kevin.barasa001@gmail.com
+"""
 from __future__ import absolute_import, print_function
 import sys; 
 from tweepy.streaming import StreamListener
@@ -22,6 +27,7 @@ access_token_secret="2s6Mh4BaTG043r9aqacvUkhOVNeBWcaJf1t5zfv9Yeykg"
 
 class StdOutListener(StreamListener):
     """ A listener handles tweets that are received from the stream.
+    
     This is a basic listener that just prints received tweets to stdout.
     """
     def on_data(self, data):
