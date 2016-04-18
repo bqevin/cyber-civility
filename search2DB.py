@@ -6,6 +6,7 @@ Email : kevin.barasa001@gmail.com
 from __future__ import absolute_import, print_function
 import sys; 
 from tweepy.streaming import StreamListener
+from HTMLParser import HTMLParser
 from tweepy import OAuthHandler
 from tweepy import Stream
 import time
@@ -31,7 +32,7 @@ class StdOutListener(StreamListener):
     This is a basic listener that just prints received tweets to stdout.
     """
     def on_data(self, data):
-        all_data = json.loads(data)
+        all_data = json.loads(HTMLParser().unescape(data))
         tags = ''
         name = all_data["user"]["name"]
         screen_name = all_data["user"]["screen_name"]
