@@ -48,7 +48,7 @@ class StdOutListener(StreamListener):
         time_zone = all_data["user"]["time_zone"]
         statuses_count = all_data["user"]["statuses_count"]
         created_at = all_data["user"]["created_at"]
-        #posted_from = all_data["coordinates"]
+        posted_from = all_data["coordinates"]
         composed_time = all_data["created_at"]
         favorite_count = all_data["favorite_count"]
         language = all_data["lang"]
@@ -57,7 +57,7 @@ class StdOutListener(StreamListener):
         c.execute("INSERT INTO uri (tags, name, screen_name, tweet, id_uniq, profile_image_url, location, lang, friends_count, followers_count, description, favourites_count, time_zone, statuses_count, created_at, composed_time, favorite_count, language, recipient_handle, retweet_count ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", 
             (tags, name, screen_name, tweet, id_uniq, profile_image_url, location, lang, friends_count, followers_count, description, favourites_count, time_zone, statuses_count, created_at, composed_time, favorite_count, language, recipient_handle, retweet_count))
         conn.commit()
-        print((name,tweet,composed_time))
+        print((name,tweet,composed_time,posted_from))
         return True
 
 
